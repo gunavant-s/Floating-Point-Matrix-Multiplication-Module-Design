@@ -1,0 +1,7 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(06Nov2024:20:09:58):( xmverilog ../testbench/testbench.sv ../testbench/sram.sv +TIMEOUT=10000000 +num_of_testcases=2 +epsilon_mult=1.0 +test_mode=0 +test_number=1 +input_dir=../inputs +info_level=0 +mystery_test=0 ../rtl/dut.sv +access+r )&&(./xcelium.d/env.d/env.history.06Nov2024_20_09_58)
+s2::(06Nov2024:20:11:04):( xmverilog ../testbench/testbench.sv ../testbench/sram.sv +TIMEOUT=10000000 +num_of_testcases=2 +epsilon_mult=1.0 +test_mode=0 +test_number=1 +input_dir=../inputs +info_level=0 +mystery_test=0 ../rtl/dut.sv +access+r )&&(./xcelium.d/env.d/env.history.06Nov2024_20_11_04)
+s3::(06Nov2024:20:19:19):( xmverilog ../testbench/testbench.sv ../testbench/sram.sv +TIMEOUT=10000000 +num_of_testcases=2 +epsilon_mult=1.0 +test_mode=0 +test_number=1 +input_dir=../inputs +info_level=0 +mystery_test=0 ../rtl/dut.sv +access+r )&&(./xcelium.d/env.d/env.history.06Nov2024_20_19_19)

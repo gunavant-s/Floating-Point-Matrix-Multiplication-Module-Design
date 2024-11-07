@@ -1,0 +1,106 @@
+Magic 271485
+Revision Verdi_T-2022.06-SP1
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 8 31 1536 889 442 124
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/mnt/ncsudrive/g/gsetty/fall_2024/564/hw6/mini_project/run/wave.fsdb" "/mnt/ncsudrive/g/gsetty/fall_2024/564/hw6/mini_project/run/wave.fsdb.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 5806.637497 5980.250279
+cursor 5915.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 9
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G1"
+activeDirFile "" "/mnt/ncsudrive/g/gsetty/fall_2024/564/hw6/mini_project/run/wave.fsdb.fsdb"
+addSignal -h 15 /tb_top/dut/clk
+addSignal -h 15 -UNSIGNED -UDEC -holdScope column_A[15:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope column_B[15:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope rows_B[15:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope column_C[15:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope current_state[3:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope dut__tb__sram_input_read_address[15:0]
+addSignal -h 15 -UNSIGNED -IEEE754 -holdScope tb__dut__sram_input_read_data[31:0]
+addSignal -h 15 -UNSIGNED -IEEE754 /tb_top/tb__dut__sram_weight_read_data[31:0]
+addSignal -h 15 /tb_top/dut/dut_valid
+addSignal -h 15 -UNSIGNED -IEEE754 -holdScope accum_result[31:0]
+addSignal -h 15 -UNSIGNED -IEEE754 -holdScope mac_result_z[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope dut__tb__sram_weight_read_address[15:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope weight_read_addr_sel[1:0]
+addSignal -h 15 -holdScope dut__tb__sram_result_write_enable
+addSignal -h 15 -UNSIGNED -UDEC -holdScope temp_count_z[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope temp_count_z_select[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope input_read_addr_sel[1:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope rows_C[15:0]
+addSignal -h 15 -UNSIGNED -IEEE754 /tb_top/dut/FP_MAC/z_inst[31:0]
+addSignal -h 15 /tb_top/dut/dut_ready
+addSignal -h 15 -holdScope set_dut_ready
+addSignal -h 15 -holdScope compute_complete
+addSignal -h 15 -UNSIGNED -UDEC -holdScope temp_count_var_A_count[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope temp_count_var_A_count_select[1:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope temp_count_var_C_count[31:0]
+addSignal -h 15 -UNSIGNED -HEX -holdScope temp_count_var_C_count_select[1:0]
+addSignal -h 15 -UNSIGNED -UDEC /tb_top/sram_input_mem/read_address[15:0]
+addSignal -h 15 -UNSIGNED -IEEE754 -holdScope read_data[31:0]
+addSignal -h 15 -UNSIGNED -IEEE754 /tb_top/dut/dut__tb__sram_result_write_data[31:0]
+addSignal -h 15 -UNSIGNED -UDEC -holdScope dut__tb__sram_result_write_address[15:0]
+addGroup "G2" -e FALSE
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+activeDirFile "" "/mnt/ncsudrive/g/gsetty/fall_2024/564/hw6/mini_project/run/wave.fsdb.fsdb"
+
+GETSIGNALFORM_SCOPE_HIERARCHY_BEGIN
+getSignalForm close
+
+"/std"
+"/tb_top"
+"/tb_top/dut"
+"/tb_top/sram_input_mem"
+
+SCOPE_LIST_BEGIN
+"/std"
+"/tb_top"
+"/tb_top/dut"
+"/tb_top/sram_input_mem"
+"/tb_top/sram_result_mem"
+"/tb_top/dut/FP_MAC"
+SCOPE_LIST_END
+
+GETSIGNALFORM_SCOPE_HIERARCHY_END
+
+

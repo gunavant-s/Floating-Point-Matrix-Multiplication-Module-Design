@@ -1,0 +1,46 @@
+# Current time Sun Oct 27 14:12:34 2024
+# ModelSim SE Stack Trace
+# Program = vish
+# Id = "2021.2"
+# Version = "2021.04"
+# Date = "Apr 14 2021"
+# Platform = "linux"
+# 0    0xf7fcb129: '<unknown (@0xf7fcb129)>'
+# 1    0xf7fcb14b: '<unknown (@0xf7fcb14b)>'
+# 2    0x0001e50b: '<unknown (@0x1e50b)>'
+# 3    0x00000005: '<unknown (@0x5)>'
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# Current time Thu Oct 31 20:39:03 2024
+# ModelSim SE Stack Trace
+# Program = vish
+# Id = "2021.2"
+# Version = "2021.04"
+# Date = "Apr 14 2021"
+# Platform = "linux"
+# 0    0xf7fcb129: '<unknown (@0xf7fcb129)>'
+# 1    0xf7fcb14b: '<unknown (@0xf7fcb14b)>'
+# 2    0x0000f10b: '<unknown (@0xf10b)>'
+# 3    0x00000005: '<unknown (@0x5)>'
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"
+# transcript error: error writing "stdout": broken pipe
+    while executing
+"puts -nonewline stdout $s"

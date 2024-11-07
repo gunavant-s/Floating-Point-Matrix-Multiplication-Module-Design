@@ -1,0 +1,314 @@
+# vsim -c -voptargs="+acc" tb_top "+TIMEOUT=10000000" "+num_of_testcases=4" "+test_mode=1" "+epsilon_mult=1.0" "+input_dir=../inputs" "+info_level=0" "+mystery_test=0" -do "run -all" 
+# Start time: 20:37:58 on Nov 06,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# ** Note: (vopt-143) Recognized 1 FSM in module "MyDesign(fast)".
+# //  ModelSim SE 2021.2 Apr 14 2021 Linux 4.18.0-553.22.1.el8_10.x86_64
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading sv_std.std
+# Loading work.tb_top(fast)
+# Loading work.sram(fast)
+# Loading work.sram(fast__1)
+# Loading work.MyDesign(fast)
+# Loading work.DW_fp_mac_inst(fast)
+# Loading work.DW_fp_mac(fast)
+# Loading work.DW_fp_dp2(fast)
+# run -all
+# INFO: number of testcases:           4
+# INFO: DONE WITH RESETING DUT
+# INFO:LVL0: ######## Running Test: 1 ########
+# INFO: Reading memory file: ../inputs/test_1/test_1_input.dat
+# INFO: Reading memory file: ../inputs/test_1/test_1_weight.dat
+# Received filename in check_result = test
+# INFO: ../inputs/test_1/test_1_result.dat
+# [          0] Result MATCH: expected_result = 0.30261445045471191406, dut_result = 0.30261445045471191406
+# [          1] Result MATCH: expected_result = 0.49913883209228515625, dut_result = 0.49913883209228515625
+# [          2] Result MATCH: expected_result = 0.92672187089920043945, dut_result = 0.92672187089920043945
+# [          3] Result MATCH: expected_result = 0.53322327136993408203, dut_result = 0.53322327136993408203
+# [          4] Result MATCH: expected_result = 0.60618770122528076172, dut_result = 0.60618770122528076172
+# [          5] Result MATCH: expected_result = 0.27004835009574890137, dut_result = 0.27004835009574890137
+# [          6] Result MATCH: expected_result = 0.61056590080261230469, dut_result = 0.61056590080261230469
+# [          7] Result MATCH: expected_result = 2.81260633468627929688, dut_result = 2.81260633468627929688
+# [          8] Result MATCH: expected_result = 0.59861218929290771484, dut_result = 0.59861218929290771484
+# [          9] Result MATCH: expected_result = 1.09119176864624023438, dut_result = 1.09119176864624023438
+# [         10] Result MATCH: expected_result = 0.76436382532119750977, dut_result = 0.76436382532119750977
+# [         11] Result MATCH: expected_result = 0.73161435127258300781, dut_result = 0.73161435127258300781
+# [         12] Result MATCH: expected_result = 1.93208241462707519531, dut_result = 1.93208241462707519531
+# [         13] Result MATCH: expected_result = 0.55436086654663085938, dut_result = 0.55436086654663085938
+# [         14] Result MATCH: expected_result = 0.00174050789792090654, dut_result = 0.00174050789792090654
+# [         15] Result MATCH: expected_result = 0.60910791158676147461, dut_result = 0.60910791158676147461
+# [         16] Result MATCH: expected_result = 0.99011498689651489258, dut_result = 0.99011498689651489258
+# [         17] Result MATCH: expected_result = 0.17628864943981170654, dut_result = 0.17628864943981170654
+# [         18] Result MATCH: expected_result = 0.55849492549896240234, dut_result = 0.55849492549896240234
+# [         19] Result MATCH: expected_result = 1.12445104122161865234, dut_result = 1.12445104122161865234
+# [         20] Result MATCH: expected_result = 0.73935598134994506836, dut_result = 0.73935598134994506836
+# [         21] Result MATCH: expected_result = 0.19949835538864135742, dut_result = 0.19949835538864135742
+# [         22] Result MATCH: expected_result = 0.00600038934499025345, dut_result = 0.00600038934499025345
+# [         23] Result MATCH: expected_result = 0.08864474296569824219, dut_result = 0.08864474296569824219
+# [         24] Result MATCH: expected_result = 0.10439661890268325806, dut_result = 0.10439661890268325806
+# [         25] Result MATCH: expected_result = 1.70898497104644775391, dut_result = 1.70898497104644775391
+# [         26] Result MATCH: expected_result = 1.32409191131591796875, dut_result = 1.32409191131591796875
+# [         27] Result MATCH: expected_result = 0.55508303642272949219, dut_result = 0.55508303642272949219
+# [         28] Result MATCH: expected_result = 1.60301494598388671875, dut_result = 1.60301494598388671875
+# [         29] Result MATCH: expected_result = 0.03185912966728210449, dut_result = 0.03185912966728210449
+# [         30] Result MATCH: expected_result = 2.36997818946838378906, dut_result = 2.36997818946838378906
+# [         31] Result MATCH: expected_result = 0.50015574693679809570, dut_result = 0.50015574693679809570
+# [         32] Result MATCH: expected_result = 0.28837865591049194336, dut_result = 0.28837865591049194336
+# [         33] Result MATCH: expected_result = 3.23924469947814941406, dut_result = 3.23924469947814941406
+# [         34] Result MATCH: expected_result = 1.26012158393859863281, dut_result = 1.26012158393859863281
+# [         35] Result MATCH: expected_result = 1.14006638526916503906, dut_result = 1.14006638526916503906
+# [         36] Result MATCH: expected_result = 0.66034013032913208008, dut_result = 0.66034013032913208008
+# [         37] Result MATCH: expected_result = 0.07926946133375167847, dut_result = 0.07926946133375167847
+# [         38] Result MATCH: expected_result = 0.55415219068527221680, dut_result = 0.55415219068527221680
+# [         39] Result MATCH: expected_result = 1.53644168376922607422, dut_result = 1.53644168376922607422
+# [         40] Result MATCH: expected_result = 0.53683722019195556641, dut_result = 0.53683722019195556641
+# [         41] Result MATCH: expected_result = 0.35564693808555603027, dut_result = 0.35564693808555603027
+# [         42] Result MATCH: expected_result = 0.01612484082579612732, dut_result = 0.01612484082579612732
+# [         43] Result MATCH: expected_result = 0.19730849564075469971, dut_result = 0.19730849564075469971
+# [         44] Result MATCH: expected_result = 1.29778707027435302734, dut_result = 1.29778707027435302734
+# [         45] Result MATCH: expected_result = 0.80652391910552978516, dut_result = 0.80652391910552978516
+# [         46] Result MATCH: expected_result = 0.87487250566482543945, dut_result = 0.87487250566482543945
+# [         47] Result MATCH: expected_result = 2.17335987091064453125, dut_result = 2.17335987091064453125
+# [         48] Result MATCH: expected_result = 1.14055085182189941406, dut_result = 1.14055085182189941406
+# [         49] Result MATCH: expected_result = 0.45123767852783203125, dut_result = 0.45123767852783203125
+# [         50] Result MATCH: expected_result = 0.29787015914916992188, dut_result = 0.29787015914916992188
+# [         51] Result MATCH: expected_result = 0.24183276295661926270, dut_result = 0.24183276295661926270
+# [         52] Result MATCH: expected_result = 0.04454254359006881714, dut_result = 0.04454254359006881714
+# [         53] Result MATCH: expected_result = 0.64969033002853393555, dut_result = 0.64969033002853393555
+# [         54] Result MATCH: expected_result = 0.15894632041454315186, dut_result = 0.15894632041454315186
+# [         55] Result MATCH: expected_result = 0.12563292682170867920, dut_result = 0.12563292682170867920
+# [         56] Result MATCH: expected_result = 0.03193603828549385071, dut_result = 0.03193603828549385071
+# [         57] Result MATCH: expected_result = 0.85498654842376708984, dut_result = 0.85498654842376708984
+# [         58] Result MATCH: expected_result = 0.34015509486198425293, dut_result = 0.34015509486198425293
+# [         59] Result MATCH: expected_result = 0.46540859341621398926, dut_result = 0.46540859341621398926
+# [         60] Result MATCH: expected_result = 1.68572819232940673828, dut_result = 1.68572819232940673828
+# [         61] Result MATCH: expected_result = 2.25312590599060058594, dut_result = 2.25312590599060058594
+# [         62] Result MATCH: expected_result = 0.04499515146017074585, dut_result = 0.04499515146017074585
+# [         63] Result MATCH: expected_result = 0.76021361351013183594, dut_result = 0.76021361351013183594
+# INFO:LVL0: ######## Running Test: 2 ########
+# INFO: Reading memory file: ../inputs/test_2/test_2_input.dat
+# INFO: Reading memory file: ../inputs/test_2/test_2_weight.dat
+# Received filename in check_result = test
+# INFO: ../inputs/test_2/test_2_result.dat
+# [          0] Result MATCH: expected_result = 0.30261445045471191406, dut_result = 0.30261445045471191406
+# [          1] Result MATCH: expected_result = 0.49913883209228515625, dut_result = 0.49913883209228515625
+# [          2] Result MATCH: expected_result = 0.92672187089920043945, dut_result = 0.92672187089920043945
+# [          3] Result MATCH: expected_result = 0.53322327136993408203, dut_result = 0.53322327136993408203
+# [          4] Result MATCH: expected_result = 0.60618770122528076172, dut_result = 0.60618770122528076172
+# [          5] Result MATCH: expected_result = 0.27004835009574890137, dut_result = 0.27004835009574890137
+# [          6] Result MATCH: expected_result = 0.61056590080261230469, dut_result = 0.61056590080261230469
+# [          7] Result MATCH: expected_result = 2.81260633468627929688, dut_result = 2.81260633468627929688
+# [          8] Result MATCH: expected_result = 0.59861218929290771484, dut_result = 0.59861218929290771484
+# [          9] Result MATCH: expected_result = 1.09119176864624023438, dut_result = 1.09119176864624023438
+# [         10] Result MATCH: expected_result = 0.76436382532119750977, dut_result = 0.76436382532119750977
+# [         11] Result MATCH: expected_result = 0.73161435127258300781, dut_result = 0.73161435127258300781
+# [         12] Result MATCH: expected_result = 1.93208241462707519531, dut_result = 1.93208241462707519531
+# [         13] Result MATCH: expected_result = 0.55436086654663085938, dut_result = 0.55436086654663085938
+# [         14] Result MATCH: expected_result = 0.00174050789792090654, dut_result = 0.00174050789792090654
+# [         15] Result MATCH: expected_result = 0.60910791158676147461, dut_result = 0.60910791158676147461
+# [         16] Result MATCH: expected_result = 0.99011498689651489258, dut_result = 0.99011498689651489258
+# [         17] Result MATCH: expected_result = 0.17628864943981170654, dut_result = 0.17628864943981170654
+# [         18] Result MATCH: expected_result = 0.55849492549896240234, dut_result = 0.55849492549896240234
+# [         19] Result MATCH: expected_result = 1.12445104122161865234, dut_result = 1.12445104122161865234
+# [         20] Result MATCH: expected_result = 0.73935598134994506836, dut_result = 0.73935598134994506836
+# [         21] Result MATCH: expected_result = 0.19949835538864135742, dut_result = 0.19949835538864135742
+# [         22] Result MATCH: expected_result = 0.00600038934499025345, dut_result = 0.00600038934499025345
+# [         23] Result MATCH: expected_result = 0.08864474296569824219, dut_result = 0.08864474296569824219
+# [         24] Result MATCH: expected_result = 0.10439661890268325806, dut_result = 0.10439661890268325806
+# [         25] Result MATCH: expected_result = 1.70898497104644775391, dut_result = 1.70898497104644775391
+# [         26] Result MATCH: expected_result = 1.32409191131591796875, dut_result = 1.32409191131591796875
+# [         27] Result MATCH: expected_result = 0.55508303642272949219, dut_result = 0.55508303642272949219
+# [         28] Result MATCH: expected_result = 1.60301494598388671875, dut_result = 1.60301494598388671875
+# [         29] Result MATCH: expected_result = 0.03185912966728210449, dut_result = 0.03185912966728210449
+# [         30] Result MATCH: expected_result = 2.36997818946838378906, dut_result = 2.36997818946838378906
+# [         31] Result MATCH: expected_result = 0.50015574693679809570, dut_result = 0.50015574693679809570
+# [         32] Result MATCH: expected_result = 0.28837865591049194336, dut_result = 0.28837865591049194336
+# [         33] Result MATCH: expected_result = 3.23924469947814941406, dut_result = 3.23924469947814941406
+# [         34] Result MATCH: expected_result = 1.26012158393859863281, dut_result = 1.26012158393859863281
+# [         35] Result MATCH: expected_result = 1.14006638526916503906, dut_result = 1.14006638526916503906
+# [         36] Result MATCH: expected_result = 0.66034013032913208008, dut_result = 0.66034013032913208008
+# [         37] Result MATCH: expected_result = 0.07926946133375167847, dut_result = 0.07926946133375167847
+# [         38] Result MATCH: expected_result = 0.55415219068527221680, dut_result = 0.55415219068527221680
+# [         39] Result MATCH: expected_result = 1.53644168376922607422, dut_result = 1.53644168376922607422
+# [         40] Result MATCH: expected_result = 0.53683722019195556641, dut_result = 0.53683722019195556641
+# [         41] Result MATCH: expected_result = 0.35564693808555603027, dut_result = 0.35564693808555603027
+# [         42] Result MATCH: expected_result = 0.01612484082579612732, dut_result = 0.01612484082579612732
+# [         43] Result MATCH: expected_result = 0.19730849564075469971, dut_result = 0.19730849564075469971
+# [         44] Result MATCH: expected_result = 1.29778707027435302734, dut_result = 1.29778707027435302734
+# [         45] Result MATCH: expected_result = 0.80652391910552978516, dut_result = 0.80652391910552978516
+# [         46] Result MATCH: expected_result = 0.87487250566482543945, dut_result = 0.87487250566482543945
+# [         47] Result MATCH: expected_result = 2.17335987091064453125, dut_result = 2.17335987091064453125
+# [         48] Result MATCH: expected_result = 1.14055085182189941406, dut_result = 1.14055085182189941406
+# [         49] Result MATCH: expected_result = 0.45123767852783203125, dut_result = 0.45123767852783203125
+# [         50] Result MATCH: expected_result = 0.29787015914916992188, dut_result = 0.29787015914916992188
+# [         51] Result MATCH: expected_result = 0.24183276295661926270, dut_result = 0.24183276295661926270
+# [         52] Result MATCH: expected_result = 0.04454254359006881714, dut_result = 0.04454254359006881714
+# [         53] Result MATCH: expected_result = 0.64969033002853393555, dut_result = 0.64969033002853393555
+# [         54] Result MATCH: expected_result = 0.15894632041454315186, dut_result = 0.15894632041454315186
+# [         55] Result MATCH: expected_result = 0.12563292682170867920, dut_result = 0.12563292682170867920
+# [         56] Result MATCH: expected_result = 0.03193603828549385071, dut_result = 0.03193603828549385071
+# [         57] Result MATCH: expected_result = 0.85498654842376708984, dut_result = 0.85498654842376708984
+# [         58] Result MATCH: expected_result = 0.34015509486198425293, dut_result = 0.34015509486198425293
+# [         59] Result MATCH: expected_result = 0.46540859341621398926, dut_result = 0.46540859341621398926
+# [         60] Result MATCH: expected_result = 1.68572819232940673828, dut_result = 1.68572819232940673828
+# [         61] Result MATCH: expected_result = 2.25312590599060058594, dut_result = 2.25312590599060058594
+# [         62] Result MATCH: expected_result = 0.04499515146017074585, dut_result = 0.04499515146017074585
+# [         63] Result MATCH: expected_result = 0.76021361351013183594, dut_result = 0.76021361351013183594
+# INFO:LVL0: ######## Running Test: 3 ########
+# INFO: Reading memory file: ../inputs/test_3/test_3_input.dat
+# INFO: Reading memory file: ../inputs/test_3/test_3_weight.dat
+# Received filename in check_result = test
+# INFO: ../inputs/test_3/test_3_result.dat
+# [          0] Result MATCH: expected_result = 0.30261445045471191406, dut_result = 0.30261445045471191406
+# [          1] Result MATCH: expected_result = 0.49913883209228515625, dut_result = 0.49913883209228515625
+# [          2] Result MATCH: expected_result = 0.92672187089920043945, dut_result = 0.92672187089920043945
+# [          3] Result MATCH: expected_result = 0.53322327136993408203, dut_result = 0.53322327136993408203
+# [          4] Result MATCH: expected_result = 0.60618770122528076172, dut_result = 0.60618770122528076172
+# [          5] Result MATCH: expected_result = 0.27004835009574890137, dut_result = 0.27004835009574890137
+# [          6] Result MATCH: expected_result = 0.61056590080261230469, dut_result = 0.61056590080261230469
+# [          7] Result MATCH: expected_result = 2.81260633468627929688, dut_result = 2.81260633468627929688
+# [          8] Result MATCH: expected_result = 0.59861218929290771484, dut_result = 0.59861218929290771484
+# [          9] Result MATCH: expected_result = 1.09119176864624023438, dut_result = 1.09119176864624023438
+# [         10] Result MATCH: expected_result = 0.76436382532119750977, dut_result = 0.76436382532119750977
+# [         11] Result MATCH: expected_result = 0.73161435127258300781, dut_result = 0.73161435127258300781
+# [         12] Result MATCH: expected_result = 1.93208241462707519531, dut_result = 1.93208241462707519531
+# [         13] Result MATCH: expected_result = 0.55436086654663085938, dut_result = 0.55436086654663085938
+# [         14] Result MATCH: expected_result = 0.00174050789792090654, dut_result = 0.00174050789792090654
+# [         15] Result MATCH: expected_result = 0.60910791158676147461, dut_result = 0.60910791158676147461
+# [         16] Result MATCH: expected_result = 0.99011498689651489258, dut_result = 0.99011498689651489258
+# [         17] Result MATCH: expected_result = 0.17628864943981170654, dut_result = 0.17628864943981170654
+# [         18] Result MATCH: expected_result = 0.55849492549896240234, dut_result = 0.55849492549896240234
+# [         19] Result MATCH: expected_result = 1.12445104122161865234, dut_result = 1.12445104122161865234
+# [         20] Result MATCH: expected_result = 0.73935598134994506836, dut_result = 0.73935598134994506836
+# [         21] Result MATCH: expected_result = 0.19949835538864135742, dut_result = 0.19949835538864135742
+# [         22] Result MATCH: expected_result = 0.00600038934499025345, dut_result = 0.00600038934499025345
+# [         23] Result MATCH: expected_result = 0.08864474296569824219, dut_result = 0.08864474296569824219
+# [         24] Result MATCH: expected_result = 0.10439661890268325806, dut_result = 0.10439661890268325806
+# [         25] Result MATCH: expected_result = 1.70898497104644775391, dut_result = 1.70898497104644775391
+# [         26] Result MATCH: expected_result = 1.32409191131591796875, dut_result = 1.32409191131591796875
+# [         27] Result MATCH: expected_result = 0.55508303642272949219, dut_result = 0.55508303642272949219
+# [         28] Result MATCH: expected_result = 1.60301494598388671875, dut_result = 1.60301494598388671875
+# [         29] Result MATCH: expected_result = 0.03185912966728210449, dut_result = 0.03185912966728210449
+# [         30] Result MATCH: expected_result = 2.36997818946838378906, dut_result = 2.36997818946838378906
+# [         31] Result MATCH: expected_result = 0.50015574693679809570, dut_result = 0.50015574693679809570
+# [         32] Result MATCH: expected_result = 0.28837865591049194336, dut_result = 0.28837865591049194336
+# [         33] Result MATCH: expected_result = 3.23924469947814941406, dut_result = 3.23924469947814941406
+# [         34] Result MATCH: expected_result = 1.26012158393859863281, dut_result = 1.26012158393859863281
+# [         35] Result MATCH: expected_result = 1.14006638526916503906, dut_result = 1.14006638526916503906
+# [         36] Result MATCH: expected_result = 0.66034013032913208008, dut_result = 0.66034013032913208008
+# [         37] Result MATCH: expected_result = 0.07926946133375167847, dut_result = 0.07926946133375167847
+# [         38] Result MATCH: expected_result = 0.55415219068527221680, dut_result = 0.55415219068527221680
+# [         39] Result MATCH: expected_result = 1.53644168376922607422, dut_result = 1.53644168376922607422
+# [         40] Result MATCH: expected_result = 0.53683722019195556641, dut_result = 0.53683722019195556641
+# [         41] Result MATCH: expected_result = 0.35564693808555603027, dut_result = 0.35564693808555603027
+# [         42] Result MATCH: expected_result = 0.01612484082579612732, dut_result = 0.01612484082579612732
+# [         43] Result MATCH: expected_result = 0.19730849564075469971, dut_result = 0.19730849564075469971
+# [         44] Result MATCH: expected_result = 1.29778707027435302734, dut_result = 1.29778707027435302734
+# [         45] Result MATCH: expected_result = 0.80652391910552978516, dut_result = 0.80652391910552978516
+# [         46] Result MATCH: expected_result = 0.87487250566482543945, dut_result = 0.87487250566482543945
+# [         47] Result MATCH: expected_result = 2.17335987091064453125, dut_result = 2.17335987091064453125
+# [         48] Result MATCH: expected_result = 1.14055085182189941406, dut_result = 1.14055085182189941406
+# [         49] Result MATCH: expected_result = 0.45123767852783203125, dut_result = 0.45123767852783203125
+# [         50] Result MATCH: expected_result = 0.29787015914916992188, dut_result = 0.29787015914916992188
+# [         51] Result MATCH: expected_result = 0.24183276295661926270, dut_result = 0.24183276295661926270
+# [         52] Result MATCH: expected_result = 0.04454254359006881714, dut_result = 0.04454254359006881714
+# [         53] Result MATCH: expected_result = 0.64969033002853393555, dut_result = 0.64969033002853393555
+# [         54] Result MATCH: expected_result = 0.15894632041454315186, dut_result = 0.15894632041454315186
+# [         55] Result MATCH: expected_result = 0.12563292682170867920, dut_result = 0.12563292682170867920
+# [         56] Result MATCH: expected_result = 0.03193603828549385071, dut_result = 0.03193603828549385071
+# [         57] Result MATCH: expected_result = 0.85498654842376708984, dut_result = 0.85498654842376708984
+# [         58] Result MATCH: expected_result = 0.34015509486198425293, dut_result = 0.34015509486198425293
+# [         59] Result MATCH: expected_result = 0.46540859341621398926, dut_result = 0.46540859341621398926
+# [         60] Result MATCH: expected_result = 1.68572819232940673828, dut_result = 1.68572819232940673828
+# [         61] Result MATCH: expected_result = 2.25312590599060058594, dut_result = 2.25312590599060058594
+# [         62] Result MATCH: expected_result = 0.04499515146017074585, dut_result = 0.04499515146017074585
+# [         63] Result MATCH: expected_result = 0.76021361351013183594, dut_result = 0.76021361351013183594
+# INFO:LVL0: ######## Running Test: 4 ########
+# INFO: Reading memory file: ../inputs/test_4/test_4_input.dat
+# INFO: Reading memory file: ../inputs/test_4/test_4_weight.dat
+# Received filename in check_result = test
+# INFO: ../inputs/test_4/test_4_result.dat
+# [          0] Result MATCH: expected_result = 0.30261445045471191406, dut_result = 0.30261445045471191406
+# [          1] Result MATCH: expected_result = 0.49913883209228515625, dut_result = 0.49913883209228515625
+# [          2] Result MATCH: expected_result = 0.92672187089920043945, dut_result = 0.92672187089920043945
+# [          3] Result MATCH: expected_result = 0.53322327136993408203, dut_result = 0.53322327136993408203
+# [          4] Result MATCH: expected_result = 0.60618770122528076172, dut_result = 0.60618770122528076172
+# [          5] Result MATCH: expected_result = 0.27004835009574890137, dut_result = 0.27004835009574890137
+# [          6] Result MATCH: expected_result = 0.61056590080261230469, dut_result = 0.61056590080261230469
+# [          7] Result MATCH: expected_result = 2.81260633468627929688, dut_result = 2.81260633468627929688
+# [          8] Result MATCH: expected_result = 0.59861218929290771484, dut_result = 0.59861218929290771484
+# [          9] Result MATCH: expected_result = 1.09119176864624023438, dut_result = 1.09119176864624023438
+# [         10] Result MATCH: expected_result = 0.76436382532119750977, dut_result = 0.76436382532119750977
+# [         11] Result MATCH: expected_result = 0.73161435127258300781, dut_result = 0.73161435127258300781
+# [         12] Result MATCH: expected_result = 1.93208241462707519531, dut_result = 1.93208241462707519531
+# [         13] Result MATCH: expected_result = 0.55436086654663085938, dut_result = 0.55436086654663085938
+# [         14] Result MATCH: expected_result = 0.00174050789792090654, dut_result = 0.00174050789792090654
+# [         15] Result MATCH: expected_result = 0.60910791158676147461, dut_result = 0.60910791158676147461
+# [         16] Result MATCH: expected_result = 0.99011498689651489258, dut_result = 0.99011498689651489258
+# [         17] Result MATCH: expected_result = 0.17628864943981170654, dut_result = 0.17628864943981170654
+# [         18] Result MATCH: expected_result = 0.55849492549896240234, dut_result = 0.55849492549896240234
+# [         19] Result MATCH: expected_result = 1.12445104122161865234, dut_result = 1.12445104122161865234
+# [         20] Result MATCH: expected_result = 0.73935598134994506836, dut_result = 0.73935598134994506836
+# [         21] Result MATCH: expected_result = 0.19949835538864135742, dut_result = 0.19949835538864135742
+# [         22] Result MATCH: expected_result = 0.00600038934499025345, dut_result = 0.00600038934499025345
+# [         23] Result MATCH: expected_result = 0.08864474296569824219, dut_result = 0.08864474296569824219
+# [         24] Result MATCH: expected_result = 0.10439661890268325806, dut_result = 0.10439661890268325806
+# [         25] Result MATCH: expected_result = 1.70898497104644775391, dut_result = 1.70898497104644775391
+# [         26] Result MATCH: expected_result = 1.32409191131591796875, dut_result = 1.32409191131591796875
+# [         27] Result MATCH: expected_result = 0.55508303642272949219, dut_result = 0.55508303642272949219
+# [         28] Result MATCH: expected_result = 1.60301494598388671875, dut_result = 1.60301494598388671875
+# [         29] Result MATCH: expected_result = 0.03185912966728210449, dut_result = 0.03185912966728210449
+# [         30] Result MATCH: expected_result = 2.36997818946838378906, dut_result = 2.36997818946838378906
+# [         31] Result MATCH: expected_result = 0.50015574693679809570, dut_result = 0.50015574693679809570
+# [         32] Result MATCH: expected_result = 0.28837865591049194336, dut_result = 0.28837865591049194336
+# [         33] Result MATCH: expected_result = 3.23924469947814941406, dut_result = 3.23924469947814941406
+# [         34] Result MATCH: expected_result = 1.26012158393859863281, dut_result = 1.26012158393859863281
+# [         35] Result MATCH: expected_result = 1.14006638526916503906, dut_result = 1.14006638526916503906
+# [         36] Result MATCH: expected_result = 0.66034013032913208008, dut_result = 0.66034013032913208008
+# [         37] Result MATCH: expected_result = 0.07926946133375167847, dut_result = 0.07926946133375167847
+# [         38] Result MATCH: expected_result = 0.55415219068527221680, dut_result = 0.55415219068527221680
+# [         39] Result MATCH: expected_result = 1.53644168376922607422, dut_result = 1.53644168376922607422
+# [         40] Result MATCH: expected_result = 0.53683722019195556641, dut_result = 0.53683722019195556641
+# [         41] Result MATCH: expected_result = 0.35564693808555603027, dut_result = 0.35564693808555603027
+# [         42] Result MATCH: expected_result = 0.01612484082579612732, dut_result = 0.01612484082579612732
+# [         43] Result MATCH: expected_result = 0.19730849564075469971, dut_result = 0.19730849564075469971
+# [         44] Result MATCH: expected_result = 1.29778707027435302734, dut_result = 1.29778707027435302734
+# [         45] Result MATCH: expected_result = 0.80652391910552978516, dut_result = 0.80652391910552978516
+# [         46] Result MATCH: expected_result = 0.87487250566482543945, dut_result = 0.87487250566482543945
+# [         47] Result MATCH: expected_result = 2.17335987091064453125, dut_result = 2.17335987091064453125
+# [         48] Result MATCH: expected_result = 1.14055085182189941406, dut_result = 1.14055085182189941406
+# [         49] Result MATCH: expected_result = 0.45123767852783203125, dut_result = 0.45123767852783203125
+# [         50] Result MATCH: expected_result = 0.29787015914916992188, dut_result = 0.29787015914916992188
+# [         51] Result MATCH: expected_result = 0.24183276295661926270, dut_result = 0.24183276295661926270
+# [         52] Result MATCH: expected_result = 0.04454254359006881714, dut_result = 0.04454254359006881714
+# [         53] Result MATCH: expected_result = 0.64969033002853393555, dut_result = 0.64969033002853393555
+# [         54] Result MATCH: expected_result = 0.15894632041454315186, dut_result = 0.15894632041454315186
+# [         55] Result MATCH: expected_result = 0.12563292682170867920, dut_result = 0.12563292682170867920
+# [         56] Result MATCH: expected_result = 0.03193603828549385071, dut_result = 0.03193603828549385071
+# [         57] Result MATCH: expected_result = 0.85498654842376708984, dut_result = 0.85498654842376708984
+# [         58] Result MATCH: expected_result = 0.34015509486198425293, dut_result = 0.34015509486198425293
+# [         59] Result MATCH: expected_result = 0.46540859341621398926, dut_result = 0.46540859341621398926
+# [         60] Result MATCH: expected_result = 1.68572819232940673828, dut_result = 1.68572819232940673828
+# [         61] Result MATCH: expected_result = 2.25312590599060058594, dut_result = 2.25312590599060058594
+# [         62] Result MATCH: expected_result = 0.04499515146017074585, dut_result = 0.04499515146017074585
+# [         63] Result MATCH: expected_result = 0.76021361351013183594, dut_result = 0.76021361351013183594
+# INFO: Total number of cases       : 4
+# INFO: Total number of result pass : 256 / 256
+# INFO: Final pass percentage       : 100.00
+# INFO: Final Time Result           : 83640 ns
+# INFO: Final Cycle Result          : 16728 cycles
+# 
+# ** Note: $finish    : ../testbench/testbench.sv(340)
+#    Time: 84380 ns  Iteration: 1  Instance: /tb_top
+# End time: 20:38:02 on Nov 06,2024, Elapsed time: 0:00:04
+# Errors: 0, Warnings: 0
