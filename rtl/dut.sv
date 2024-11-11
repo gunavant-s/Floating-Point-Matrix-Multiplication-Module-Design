@@ -85,9 +85,8 @@ module MyDesign(
 	reg                           set_dut_ready             ;
 	reg [1:0]                     input_read_addr_sel       ;
 	reg [1:0]                     weight_read_addr_sel      ;
-	reg [1:0]                     temp_count_row_A_select   ; // for A count
+	// reg [1:0]                     temp_count_row_A_select   ; // for A count
 	reg [1:0] 					  temp_count_var_A_count_select; // for increasing A until Arow
-	reg [1:0] 					  temp_count_var_C_count_select; // moving to next Crow
 	reg [1:0] 					  temp_count_z_select;
 	reg                           write_enable_sel          ;
 
@@ -98,13 +97,12 @@ module MyDesign(
 	// reg [31:0] coloums_count; // for decrementing the count of number of column so that when it (ends finish) decreases then A start = 1 + row ? i.e next col of c matrix
 	reg [31:0] temp_count_z; // counts while c = a*b + c, then when equal to row_B then write to Z and make it 0 again
 	reg [31:0] temp_count_var_A_count; // if equals to brows then start from A1
-	reg [31:0] temp_count_var_C_count; // If equals to Brows then move to next row of C, then 
-	// reg [31:0] temp_accumulate;
 
 	reg [31:0] rows_A, column_A;
 	reg [31:0] rows_B, column_B;
 	reg [31:0] rows_C, column_C;
-	
+	reg [15:0]a_reads, b_reads, c_reads;
+
 	reg [15:0] input_read_address, weight_read_address;
 	reg        write_enable_sel_r;
 	reg [15:0] start_addr;
@@ -114,7 +112,6 @@ module MyDesign(
 
 //------------------------------------------Address Counters-----------------------------------------------------
 	// This temp variable is to track A, i.e if calculation of a C is done then start from 1,
-	//  and temp_count_var_C_count = Brows then A start = 1 + ROW
 	always @(posedge clk) begin 
 		if(!reset_n)
 			temp_count_var_A_count <= 0;
@@ -130,27 +127,8 @@ module MyDesign(
 		end
 	end
 
-	// This temp variable is to track C rows, i.e if calculation of c row is done then move to next row
-	//  Now A start = row + 1
-	always @(posedge clk) begin 
-		if(!reset_n)
-			temp_count_var_C_count <= 0;
-		else begin
-			if(temp_count_var_C_count_select == 2'b00)
-				temp_count_var_C_count <= `SRAM_ADDR_WIDTH'b0;
-			else if (temp_count_var_C_count_select == 2'b01) begin
-				temp_count_var_C_count <= temp_count_var_C_count + `SRAM_ADDR_WIDTH'b1;
-			end
-			else if (temp_count_var_C_count_select == 2'b10)
-				temp_count_var_C_count <= temp_count_var_C_count;
-			else if (temp_count_var_C_count_select == 2'b11) begin
-				temp_count_var_C_count <= `SRAM_ADDR_WIDTH'b01;
-			end
-		end
-	end
 	// another counter for setting where z = a*b +c. If it reaches final value i.e Brows then Write_C then next C calculation -> S2
 	// when temp_a == rowB then write to C
-
 	always @(posedge clk) begin
 		if(!reset_n) begin
 			temp_count_z <= 0;
@@ -159,15 +137,15 @@ module MyDesign(
 		else begin
 			if(temp_count_z_select == 2'b00) begin
 				if(temp_count_var_A_count==1 && write_enable_sel == 1) begin
-					accum_result <= 0;
+					accum_result   <= 0;
 					accum_result_r <=0 ;
-					temp_count_z <= 0;
+					temp_count_z   <= 0;
 				end
 				else begin
-					temp_count_z <= 0;
+					temp_count_z   <= 0;
 					// mac_result_z <= 0;
 					accum_result_r <=0;
-					accum_result <= 0;
+					accum_result   <= 0;
 				end
 			end
 			else if(temp_count_z_select == 2'b01) begin
@@ -189,9 +167,7 @@ module MyDesign(
 				end
 				else begin
 					temp_count_z <= temp_count_z;
-					if(write_enable_sel_r == 1 && temp_count_var_C_count != column_B - 1 && temp_count_var_A_count==1)
-						accum_result <= accum_result;//accum_result_r
-					else if(write_enable_sel_r == 1 && temp_count_var_C_count == column_B -1)
+					if(write_enable_sel_r == 1)
 						accum_result <= 0;
 					else 
 						accum_result <= accum_result;
@@ -211,8 +187,12 @@ module MyDesign(
 		else begin
 			if (input_read_addr_sel == 2'b00)
 				sram_read_address_A <= `SRAM_ADDR_WIDTH'b0;
-			else if (input_read_addr_sel == 2'b01)
-				sram_read_address_A <= sram_read_address_A + `SRAM_ADDR_WIDTH'b1;
+			else if (input_read_addr_sel == 2'b01) begin
+				if(sram_read_address_A == rows_A * column_A)
+					sram_read_address_A <= `SRAM_ADDR_WIDTH'b1;
+				else
+					sram_read_address_A <= sram_read_address_A + `SRAM_ADDR_WIDTH'b1;
+			end
 			else if (input_read_addr_sel == 2'b10)
 				sram_read_address_A <= sram_read_address_A;
 			else if (input_read_addr_sel == 2'b11)
@@ -225,22 +205,38 @@ module MyDesign(
 	always @(posedge clk) begin
 		if (!reset_n) begin
 			sram_read_address_B <= 0;
+			b_reads 			<= 1'b0;
 		end
 		else begin
-			if (weight_read_addr_sel == 2'b00)
+			if (weight_read_addr_sel == 2'b00) begin 
 				sram_read_address_B <= `SRAM_ADDR_WIDTH'b0;
+				b_reads				<= 1'b0;
+			end
 			else if (weight_read_addr_sel == 2'b01) begin
-				if(sram_read_address_B == column_B * rows_B)
-					sram_read_address_B <= `SRAM_ADDR_WIDTH'b01;
-				else
-					sram_read_address_B <= sram_read_address_B + `SRAM_ADDR_WIDTH'b1;
+				if(sram_read_address_B < (column_B * rows_A * column_B))begin
+					if(b_reads < rows_B * column_B) begin
+						sram_read_address_B <= sram_read_address_B + 16'b1;
+						b_reads 		<= b_reads  + 16'b1;
+					end
+				// if(sram_read_address_B == column_B * rows_B)
+					// sram_read_address_B <= `SRAM_ADDR_WIDTH'b01;
+				// else
+				// 	sram_read_address_B <= sram_read_address_B + `SRAM_ADDR_WIDTH'b1;
+				else begin
+					sram_read_address_B <= sram_read_address_B - (rows_B*column_B - 1);
+					b_reads			     <= 16'b1;
+				end
+			end
+				else begin
+					sram_read_address_B <= sram_read_address_B;
+				end
 			end
 			else if (weight_read_addr_sel == 2'b10) 
 				sram_read_address_B <= sram_read_address_B;
 			else if (weight_read_addr_sel == 2'b11) //if counter_C == row_B
 				sram_read_address_B <= `SRAM_ADDR_WIDTH'b01;
 				// sram_read_address_B <= `SRAM_ADDR_WIDTH'b00;
-		end
+		end 
 	end
 	// for C write addr calculation
 	always @(posedge clk) begin
@@ -281,13 +277,11 @@ module MyDesign(
 					column_C 			        	= 0;
 					start_addr							= 1;
 					sram_result_write_data_reg 		= 0;
-         			// sram_write_address_r            = -1;
 					input_read_addr_sel  			= 2'b0;
 					set_dut_ready    			    = 1'b0;
 					weight_read_addr_sel 			= 2'b0;
 					write_enable_sel				= 0;
 					temp_count_var_A_count_select 	= 2'b0;
-					temp_count_var_C_count_select 	= 2'b0;
 					temp_count_z_select				= 2'b0;
 					next_state 						= S1; 
 				end
@@ -311,7 +305,6 @@ module MyDesign(
 
 				// set_dut_ready    			  = 1'b0;
 				temp_count_var_A_count_select = 2'b00;
-				temp_count_var_C_count_select = 2'b10;
 				temp_count_z_select 		  = 2'b0;
 				input_read_addr_sel			  = 0;
 				weight_read_addr_sel		  = 0;
@@ -323,7 +316,6 @@ module MyDesign(
 				set_dut_ready    			  = 1'b0;
 
 				temp_count_var_A_count_select = 2'b10;
-				temp_count_var_C_count_select = 2'b10; //00
 				temp_count_z_select 		  = 0;
 				input_read_addr_sel			  = 2'b01;
 				weight_read_addr_sel		  = 2'b01;
@@ -337,7 +329,6 @@ module MyDesign(
 				set_dut_ready    			  = 1'b0;
 
 				temp_count_var_A_count_select = 2'b01;
-				temp_count_var_C_count_select = 2'b10;
 				input_read_addr_sel			  = 2'b01;
 				weight_read_addr_sel		  = 2'b01;
 				temp_count_z_select 		  = 2'b10;
@@ -348,7 +339,6 @@ module MyDesign(
 			S4: begin
 				set_dut_ready    			  = 1'b0;
 				temp_count_var_A_count_select = 2'b10;
-				temp_count_var_C_count_select = 2'b10;
 				input_read_addr_sel			  = 2'b10;
 				weight_read_addr_sel		  = 2'b10;//10
 				temp_count_z_select 		  = 2'b01;
@@ -356,10 +346,6 @@ module MyDesign(
 
 				if(temp_count_var_A_count + 1 == column_B) begin
 					write_enable_sel 			  = 1;
-					if(temp_count_var_C_count == column_B -1) begin
-						input_read_addr_sel			  = 2'b10;//01
-						weight_read_addr_sel		  = 2'b10;
-					end
 					next_state = S5;
 				end
 				else begin
@@ -369,42 +355,24 @@ module MyDesign(
 			end
 
 			S5: begin // write into sram c
-				set_dut_ready    			              = 1'b0;
-				write_enable_sel 			              = 0;
-				if((temp_count_var_C_count == column_B -1) && ~(sram_write_address_r == (column_C*rows_C - 1))) begin // next row
-					temp_count_var_A_count_select     = 2'b11;
-					temp_count_var_C_count_select     = 2'b0;
-
-					input_read_addr_sel               = 2'b01;
-					weight_read_addr_sel              = 2'b01;
-					
-					input_read_addr_sel	        		  = 2'b01;//01
-					weight_read_addr_sel		          = 2'b01;//10
-					temp_count_z_select 		          = 2'b00;//01
-					next_state 					 			        = S3;
-				end
-				else if(sram_write_address_r == (column_C*rows_C - 1)) begin
+				set_dut_ready    			          = 1'b0;
+				write_enable_sel 			          = 0;
+				 if(sram_write_address_r == (column_C*rows_C - 1)) begin
 					next_state = S6;
 				end
 				else if (sram_read_address_B == rows_B*column_B) begin //when 1 C calculation is done, start A and B from start
 					input_read_addr_sel           = 2'b01;
 					weight_read_addr_sel          = 2'b01;
 				  temp_count_var_A_count_select = 2'b0;
-					temp_count_var_C_count_select = 2'b01;
 					temp_count_z_select 		      = 2'b0;
 					next_state                    = S5_5;
 				end  //only a was changing, when added, 397 to 403, new state S5_5
-				else begin //if(temp_count_var_C_count < column_B) begin // in same row
+				else begin 
 					temp_count_var_A_count_select = 2'b0;
-					temp_count_var_C_count_select = 2'b01;
 					input_read_addr_sel			  = 2'b11;
 					weight_read_addr_sel		  = 2'b01;
-					
-					if(temp_count_var_C_count == column_B - 1)
-						temp_count_z_select 		  = 2'b10;
-					else 
-					   temp_count_z_select 		  = 2'b0;
-						 next_state 					    = S5_5;// hold state
+					temp_count_z_select 		  = 2'b0;
+					next_state 					    = S5_5;// hold state
 				end
 			end
 			S5_5: begin
